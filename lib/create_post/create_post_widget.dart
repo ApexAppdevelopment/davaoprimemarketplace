@@ -14,6 +14,7 @@ import 'dart:io';
 import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'create_post_model.dart';
@@ -405,6 +406,8 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                         color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).subtitle2Family),
                       ),
                   elevation: 0,
                   borderSide: BorderSide(

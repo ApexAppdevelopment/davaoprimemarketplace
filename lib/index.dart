@@ -30,3 +30,13 @@ export 'list_arts/list_arts_widget.dart' show ListArtsWidget;
 export 'categorylist/categorylist_widget.dart' show CategorylistWidget;
 export 'itemsin_category/itemsin_category_widget.dart'
     show ItemsinCategoryWidget;
+export 'productlink/productlink_widget.dart' show ProductlinkWidget;
+export 'dashboard/dashboard_widget.dart' show DashboardWidget;
+export 'co_admin/co_admin_widget.dart' show CoAdminWidget;
+export 'update_share_details/update_share_details_widget.dart'
+    show UpdateShareDetailsWidget;
+export 'phone_verify/phone_verify_widget.dart' show PhoneVerifyWidget;
+export 'confirmation/confirmation_widget.dart' show ConfirmationWidget;
+export 'marketplace_copy/marketplace_copy_widget.dart'
+    show MarketplaceCopyWidget;
+export 'store1/store1_widget.dart' show Store1Widget;

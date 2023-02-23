@@ -1,6 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'create_modal_model.dart';
@@ -157,9 +158,14 @@ class _CreateModalWidgetState extends State<CreateModalWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .title3
                                     .override(
-                                      fontFamily: 'Outfit',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .title3Family,
                                       color: FlutterFlowTheme.of(context)
                                           .tertiaryColor,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .title3Family),
                                     ),
                               ),
                             ),

@@ -12,6 +12,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'profile_page_model.dart';
@@ -73,8 +74,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
             child: SizedBox(
               width: 50,
               height: 50,
-              child: CircularProgressIndicator(
-                color: FlutterFlowTheme.of(context).primaryColor,
+              child: SpinKitChasingDots(
+                color: Color(0xFF104388),
+                size: 50,
               ),
             ),
           );
@@ -121,8 +123,14 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .subtitle1
                                           .override(
-                                            fontFamily: 'Outfit',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle1Family,
                                             fontSize: 16,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .subtitle1Family),
                                           ),
                                     ),
                                     Align(
@@ -138,9 +146,17 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                 .bodyText1
                                                 .override(
                                                   fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFFEE8B60),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.normal,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1Family),
                                                 ),
                                           ),
                                         ),
@@ -221,13 +237,17 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                         options: FFButtonOptions(
                           width: 130,
                           height: 40,
-                          color: FlutterFlowTheme.of(context).primaryColor,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           textStyle: FlutterFlowTheme.of(context)
                               .bodyText1
                               .override(
-                                fontFamily: 'Roboto Mono',
-                                color:
-                                    FlutterFlowTheme.of(context).tertiaryColor,
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyText1Family,
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyText1Family),
                               ),
                           elevation: 2,
                           borderSide: BorderSide(
@@ -318,9 +338,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                         child: SizedBox(
                                           width: 50,
                                           height: 50,
-                                          child: CircularProgressIndicator(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryColor,
+                                          child: SpinKitChasingDots(
+                                            color: Color(0xFF104388),
+                                            size: 50,
                                           ),
                                         ),
                                       );
@@ -509,9 +529,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                         child: SizedBox(
                                           width: 50,
                                           height: 50,
-                                          child: CircularProgressIndicator(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryColor,
+                                          child: SpinKitChasingDots(
+                                            color: Color(0xFF104388),
+                                            size: 50,
                                           ),
                                         ),
                                       );
@@ -555,12 +575,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                   child: SizedBox(
                                                     width: 50,
                                                     height: 50,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryColor,
+                                                    child: SpinKitChasingDots(
+                                                      color: Color(0xFF104388),
+                                                      size: 50,
                                                     ),
                                                   ),
                                                 );

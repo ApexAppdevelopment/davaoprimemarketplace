@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'forgot_password_model.dart';
@@ -160,6 +161,8 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                       color: FlutterFlowTheme.of(context).tertiaryColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).subtitle2Family),
                     ),
                 elevation: 3,
                 borderSide: BorderSide(

@@ -15,6 +15,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -217,9 +218,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                 child: SizedBox(
                                   width: 50,
                                   height: 50,
-                                  child: CircularProgressIndicator(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryColor,
+                                  child: SpinKitChasingDots(
+                                    color: Color(0xFF104388),
+                                    size: 50,
                                   ),
                                 ),
                               );
@@ -255,10 +256,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           child: SizedBox(
                                             width: 50,
                                             height: 50,
-                                            child: CircularProgressIndicator(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryColor,
+                                            child: SpinKitChasingDots(
+                                              color: Color(0xFF104388),
+                                              size: 50,
                                             ),
                                           ),
                                         );
@@ -328,8 +328,16 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                         .bodyText1
                                                         .override(
                                                           fontFamily:
-                                                              'Roboto Mono',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyText1Family,
                                                           fontSize: 12,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyText1Family),
                                                         ),
                                               ),
                                             ),
@@ -363,8 +371,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         child: SizedBox(
                           width: 50,
                           height: 50,
-                          child: CircularProgressIndicator(
-                            color: FlutterFlowTheme.of(context).primaryColor,
+                          child: SpinKitChasingDots(
+                            color: Color(0xFF104388),
+                            size: 50,
                           ),
                         ),
                       );
@@ -399,9 +408,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   child: SizedBox(
                                     width: 50,
                                     height: 50,
-                                    child: CircularProgressIndicator(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryColor,
+                                    child: SpinKitChasingDots(
+                                      color: Color(0xFF104388),
+                                      size: 50,
                                     ),
                                   ),
                                 );
@@ -738,6 +747,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .normal,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyText2Family),
                                                               ),
                                                         ),
                                                       ),
@@ -776,6 +790,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .normal,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyText2Family),
                                                                 ),
                                                       ),
                                                     ),

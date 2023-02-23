@@ -8,6 +8,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'itemsin_category_model.dart';
@@ -105,9 +106,11 @@ class _ItemsinCategoryWidgetState extends State<ItemsinCategoryWidget>
         title: Text(
           widget.selectedcategory!.category!,
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Outfit',
+                fontFamily: FlutterFlowTheme.of(context).title2Family,
                 color: Colors.white,
                 fontSize: 22,
+                useGoogleFonts: GoogleFonts.asMap()
+                    .containsKey(FlutterFlowTheme.of(context).title2Family),
               ),
         ),
         actions: [],
@@ -132,11 +135,16 @@ class _ItemsinCategoryWidgetState extends State<ItemsinCategoryWidget>
                               EdgeInsetsDirectional.fromSTEB(20, 12, 0, 12),
                           child: Text(
                             'Recommended for you',
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Roboto Mono',
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText1
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyText1Family,
+                                  fontWeight: FontWeight.bold,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .bodyText1Family),
+                                ),
                           ),
                         ),
                       ],
@@ -158,10 +166,14 @@ class _ItemsinCategoryWidgetState extends State<ItemsinCategoryWidget>
                             style: FlutterFlowTheme.of(context)
                                 .bodyText1
                                 .override(
-                                  fontFamily: 'Roboto Mono',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyText1Family,
                                   color:
                                       FlutterFlowTheme.of(context).primaryColor,
                                   fontWeight: FontWeight.bold,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .bodyText1Family),
                                 ),
                           ),
                         ),
@@ -200,8 +212,9 @@ class _ItemsinCategoryWidgetState extends State<ItemsinCategoryWidget>
                       child: SizedBox(
                         width: 50,
                         height: 50,
-                        child: CircularProgressIndicator(
-                          color: FlutterFlowTheme.of(context).primaryColor,
+                        child: SpinKitChasingDots(
+                          color: Color(0xFF104388),
+                          size: 50,
                         ),
                       ),
                     );
@@ -284,9 +297,17 @@ class _ItemsinCategoryWidgetState extends State<ItemsinCategoryWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText1
                                               .override(
-                                                fontFamily: 'Roboto Mono',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1Family,
                                                 fontSize: 10,
                                                 fontWeight: FontWeight.normal,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyText1Family),
                                               ),
                                         ),
                                       ),

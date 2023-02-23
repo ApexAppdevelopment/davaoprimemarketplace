@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
 set(BINARY_NAME "DavaoPrime")
-set(APPLICATION_ID "com.affordealsuae.android")
+set(APPLICATION_ID "com.f2marketph.android")
 
 cmake_policy(SET CMP0063 NEW)
 

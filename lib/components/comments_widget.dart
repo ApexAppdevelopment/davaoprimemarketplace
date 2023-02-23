@@ -5,6 +5,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'comments_model.dart';
@@ -64,8 +65,9 @@ class _CommentsWidgetState extends State<CommentsWidget> {
               child: SizedBox(
                 width: 50,
                 height: 50,
-                child: CircularProgressIndicator(
-                  color: FlutterFlowTheme.of(context).primaryColor,
+                child: SpinKitChasingDots(
+                  color: Color(0xFF104388),
+                  size: 50,
                 ),
               ),
             );
@@ -117,9 +119,9 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                               child: SizedBox(
                                 width: 50,
                                 height: 50,
-                                child: CircularProgressIndicator(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
+                                child: SpinKitChasingDots(
+                                  color: Color(0xFF104388),
+                                  size: 50,
                                 ),
                               ),
                             );
@@ -157,9 +159,9 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                         child: SizedBox(
                                           width: 50,
                                           height: 50,
-                                          child: CircularProgressIndicator(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryColor,
+                                          child: SpinKitChasingDots(
+                                            color: Color(0xFF104388),
+                                            size: 50,
                                           ),
                                         ),
                                       );
@@ -250,9 +252,14 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                                   .bodyText1
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Roboto Mono',
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyText1Family,
                                                                     fontSize:
                                                                         12,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyText1Family),
                                                                   ),
                                                             ),
                                                           ),
@@ -269,9 +276,15 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                                     .of(context)
                                                                 .bodyText2
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Roboto Mono',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyText2Family,
                                                                   fontSize: 12,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyText2Family),
                                                                 ),
                                                           ),
                                                         ],
@@ -405,9 +418,13 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .subtitle2
                                 .override(
-                                  fontFamily: 'Roboto Mono',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .subtitle2Family,
                                   color:
                                       FlutterFlowTheme.of(context).primaryColor,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .subtitle2Family),
                                 ),
                             elevation: 0,
                             borderSide: BorderSide(

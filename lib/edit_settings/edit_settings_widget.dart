@@ -8,6 +8,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'edit_settings_model.dart';
@@ -91,8 +92,9 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget>
             child: SizedBox(
               width: 50,
               height: 50,
-              child: CircularProgressIndicator(
-                color: FlutterFlowTheme.of(context).primaryColor,
+              child: SpinKitChasingDots(
+                color: Color(0xFF104388),
+                size: 50,
               ),
             ),
           );
@@ -513,13 +515,16 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget>
                         width: 90,
                         height: 40,
                         color: Colors.white,
-                        textStyle:
-                            FlutterFlowTheme.of(context).bodyText2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF4B39EF),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
+                        textStyle: FlutterFlowTheme.of(context)
+                            .bodyText2
+                            .override(
+                              fontFamily: 'Lexend Deca',
+                              color: Color(0xFF4B39EF),
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).bodyText2Family),
+                            ),
                         elevation: 3,
                         borderSide: BorderSide(
                           color: Colors.transparent,

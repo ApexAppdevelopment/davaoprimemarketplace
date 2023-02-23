@@ -11,6 +11,7 @@ import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'flutter_flow/nav/nav.dart';
@@ -127,6 +128,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'Home': HomeWidget(),
       'allChatsPage': AllChatsPageWidget(),
       'Marketplace': MarketplaceWidget(),
+      'Dashboard': DashboardWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
     return Scaffold(
@@ -181,7 +183,15 @@ class _NavBarPageState extends State<NavBarPage> {
               FontAwesomeIcons.store,
               size: 22,
             ),
-            label: '',
+            label: 'Store',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.account_balance_wallet,
+              size: 24,
+            ),
+            label: 'Account',
             tooltip: '',
           )
         ],

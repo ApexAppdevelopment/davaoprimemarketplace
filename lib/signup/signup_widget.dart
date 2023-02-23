@@ -9,6 +9,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'signup_model.dart';
@@ -160,8 +161,11 @@ class _SignupWidgetState extends State<SignupWidget>
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Roboto Mono',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyText1Family,
                               color: FlutterFlowTheme.of(context).primaryText,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).bodyText1Family),
                             ),
                         validator: _model.signUpNameControllerValidator
                             .asValidator(context),
@@ -210,8 +214,11 @@ class _SignupWidgetState extends State<SignupWidget>
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Roboto Mono',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyText1Family,
                               color: FlutterFlowTheme.of(context).primaryText,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).bodyText1Family),
                             ),
                         keyboardType: TextInputType.emailAddress,
                         validator: _model.signUpEmailControllerValidator
@@ -292,8 +299,11 @@ class _SignupWidgetState extends State<SignupWidget>
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Roboto Mono',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyText1Family,
                               color: FlutterFlowTheme.of(context).primaryText,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).bodyText1Family),
                             ),
                         validator: _model.signUpPassControllerValidator
                             .asValidator(context),
@@ -373,8 +383,11 @@ class _SignupWidgetState extends State<SignupWidget>
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Roboto Mono',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyText1Family,
                               color: FlutterFlowTheme.of(context).primaryText,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).bodyText1Family),
                             ),
                         validator: _model.signUpConfirmPassControllerValidator
                             .asValidator(context),
@@ -392,9 +405,14 @@ class _SignupWidgetState extends State<SignupWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Roboto Mono',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyText1Family,
                                     fontSize: 12,
                                     fontWeight: FontWeight.w300,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodyText1Family),
                                   ),
                             ),
                           ),
@@ -449,13 +467,17 @@ class _SignupWidgetState extends State<SignupWidget>
                         width: double.infinity,
                         height: 44,
                         color: FlutterFlowTheme.of(context).primaryColor,
-                        textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Roboto Mono',
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                        textStyle: FlutterFlowTheme.of(context)
+                            .subtitle2
+                            .override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).subtitle2Family,
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).subtitle2Family),
+                            ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1,
@@ -490,10 +512,14 @@ class _SignupWidgetState extends State<SignupWidget>
                           style: FlutterFlowTheme.of(context)
                               .bodyText1
                               .override(
-                                fontFamily: 'Roboto Mono',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyText1Family,
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
                                 fontWeight: FontWeight.w500,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyText1Family),
                               ),
                         ),
                       ),

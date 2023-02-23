@@ -4,6 +4,7 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'categorylist_model.dart';
@@ -114,8 +115,9 @@ class _CategorylistWidgetState extends State<CategorylistWidget> {
                           child: SizedBox(
                             width: 50,
                             height: 50,
-                            child: CircularProgressIndicator(
-                              color: FlutterFlowTheme.of(context).primaryColor,
+                            child: SpinKitChasingDots(
+                              color: Color(0xFF104388),
+                              size: 50,
                             ),
                           ),
                         );

@@ -10,6 +10,7 @@ import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'post_details_model.dart';
@@ -62,8 +63,9 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
             child: SizedBox(
               width: 50,
               height: 50,
-              child: CircularProgressIndicator(
-                color: FlutterFlowTheme.of(context).primaryColor,
+              child: SpinKitChasingDots(
+                color: Color(0xFF104388),
+                size: 50,
               ),
             ),
           );
@@ -387,8 +389,14 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText2
                                           .override(
-                                            fontFamily: 'Roboto Mono',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText2Family,
                                             fontSize: 12,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText2Family),
                                           ),
                                     ),
                                   ],
@@ -412,9 +420,9 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                       child: SizedBox(
                                         width: 50,
                                         height: 50,
-                                        child: CircularProgressIndicator(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryColor,
+                                        child: SpinKitChasingDots(
+                                          color: Color(0xFF104388),
+                                          size: 50,
                                         ),
                                       ),
                                     );
@@ -456,11 +464,9 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                                 child: SizedBox(
                                                   width: 50,
                                                   height: 50,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryColor,
+                                                  child: SpinKitChasingDots(
+                                                    color: Color(0xFF104388),
+                                                    size: 50,
                                                   ),
                                                 ),
                                               );
@@ -738,9 +744,15 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .subtitle2
                                         .override(
-                                          fontFamily: 'Roboto Mono',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .subtitle2Family,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryColor,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2Family),
                                         ),
                                     elevation: 0,
                                     borderSide: BorderSide(

@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -106,21 +107,29 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget>
                         Text(
                           'Never miss new products and feeds',
                           style: FlutterFlowTheme.of(context).title3.override(
-                                fontFamily: 'Outfit',
+                                fontFamily:
+                                    FlutterFlowTheme.of(context).title3Family,
                                 color: FlutterFlowTheme.of(context).primaryText,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context).title3Family),
                               ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(4, 16, 4, 0),
                           child: Text(
                             'Create your products with davao Prime Marketplace',
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Roboto Mono',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      fontWeight: FontWeight.normal,
-                                    ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText1
+                                .override(
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyText1Family,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  fontWeight: FontWeight.normal,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .bodyText1Family),
+                                ),
                           ),
                         ),
                         Padding(
@@ -153,9 +162,14 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget>
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyText2
                                   .override(
-                                    fontFamily: 'Roboto Mono',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyText2Family,
                                     color: Color(0xFFDDDD90),
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodyText2Family),
                                   ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,

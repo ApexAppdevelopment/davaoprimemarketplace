@@ -7,6 +7,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'story_details_model.dart';
@@ -65,8 +66,9 @@ class _StoryDetailsWidgetState extends State<StoryDetailsWidget> {
                       child: SizedBox(
                         width: 50,
                         height: 50,
-                        child: CircularProgressIndicator(
-                          color: FlutterFlowTheme.of(context).primaryColor,
+                        child: SpinKitChasingDots(
+                          color: Color(0xFF104388),
+                          size: 50,
                         ),
                       ),
                     );
@@ -165,10 +167,10 @@ class _StoryDetailsWidgetState extends State<StoryDetailsWidget> {
                                                               width: 50,
                                                               height: 50,
                                                               child:
-                                                                  CircularProgressIndicator(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryColor,
+                                                                  SpinKitChasingDots(
+                                                                color: Color(
+                                                                    0xFF104388),
+                                                                size: 50,
                                                               ),
                                                             ),
                                                           );
@@ -235,9 +237,11 @@ class _StoryDetailsWidgetState extends State<StoryDetailsWidget> {
                                                                           .bodyText1
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Roboto Mono',
+                                                                                FlutterFlowTheme.of(context).bodyText1Family,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).tertiaryColor,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyText1Family),
                                                                           ),
                                                                     ),
                                                                   ),
@@ -256,11 +260,13 @@ class _StoryDetailsWidgetState extends State<StoryDetailsWidget> {
                                                                           .bodyText1
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Roboto Mono',
+                                                                                FlutterFlowTheme.of(context).bodyText1Family,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).tertiaryColor,
                                                                             fontSize:
                                                                                 12,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyText1Family),
                                                                           ),
                                                                     ),
                                                                   ),
@@ -421,11 +427,17 @@ class _StoryDetailsWidgetState extends State<StoryDetailsWidget> {
                                                                   context)
                                                               .bodyText1
                                                               .override(
-                                                                fontFamily:
-                                                                    'Roboto Mono',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText1Family,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .tertiaryColor,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyText1Family),
                                                               ),
                                                     ),
                                                   ),
@@ -485,16 +497,24 @@ class _StoryDetailsWidgetState extends State<StoryDetailsWidget> {
                                                 pageViewUserStoriesRecord
                                                     .numComments!
                                                     .toString(),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyText1
-                                                    .override(
-                                                      fontFamily: 'Roboto Mono',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyText1Family,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .tertiaryColor,
-                                                    ),
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyText1Family),
+                                                        ),
                                               ),
                                             ),
                                           ],

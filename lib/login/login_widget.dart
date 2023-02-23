@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'login_model.dart';
@@ -131,8 +132,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                         ),
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Roboto Mono',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyText1Family,
                             color: FlutterFlowTheme.of(context).primaryText,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyText1Family),
                           ),
                       keyboardType: TextInputType.emailAddress,
                       validator: _model.signInEmailControllerValidator
@@ -213,8 +217,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                         ),
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Roboto Mono',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyText1Family,
                             color: FlutterFlowTheme.of(context).primaryText,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyText1Family),
                           ),
                       validator: _model.signInPassControllerValidator
                           .asValidator(context),
@@ -270,13 +277,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                       width: double.infinity,
                       height: 44,
                       color: FlutterFlowTheme.of(context).primaryColor,
-                      textStyle:
-                          FlutterFlowTheme.of(context).subtitle2.override(
-                                fontFamily: 'Roboto Mono',
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                              ),
+                      textStyle: FlutterFlowTheme.of(context)
+                          .subtitle2
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).subtitle2Family,
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).subtitle2Family),
+                          ),
                       borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1,
@@ -309,9 +320,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                       child: Text(
                         'Sign up',
                         style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Roboto Mono',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyText1Family,
                               color: FlutterFlowTheme.of(context).primaryColor,
                               fontWeight: FontWeight.w500,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).bodyText1Family),
                             ),
                       ),
                     ),

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import '../flutter_flow_theme.dart';
@@ -256,6 +257,48 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 selectedcategory:
                     params.getParam('selectedcategory', ParamType.Document),
               ),
+            ),
+            FFRoute(
+              name: 'productlink',
+              path: 'productlink',
+              builder: (context, params) => ProductlinkWidget(),
+            ),
+            FFRoute(
+              name: 'Dashboard',
+              path: 'dashboard',
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'Dashboard')
+                  : DashboardWidget(),
+            ),
+            FFRoute(
+              name: 'CoAdmin',
+              path: 'coAdmin',
+              builder: (context, params) => CoAdminWidget(),
+            ),
+            FFRoute(
+              name: 'UpdateShareDetails',
+              path: 'updateShareDetails',
+              builder: (context, params) => UpdateShareDetailsWidget(),
+            ),
+            FFRoute(
+              name: 'PhoneVerify',
+              path: 'phoneVerify',
+              builder: (context, params) => PhoneVerifyWidget(),
+            ),
+            FFRoute(
+              name: 'Confirmation',
+              path: 'confirmation',
+              builder: (context, params) => ConfirmationWidget(),
+            ),
+            FFRoute(
+              name: 'MarketplaceCopy',
+              path: 'marketplaceCopy',
+              builder: (context, params) => MarketplaceCopyWidget(),
+            ),
+            FFRoute(
+              name: 'Store1',
+              path: 'store1',
+              builder: (context, params) => Store1Widget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

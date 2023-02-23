@@ -5,6 +5,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'add_chat_users_model.dart';
@@ -175,8 +176,9 @@ class _AddChatUsersWidgetState extends State<AddChatUsersWidget> {
                     child: SizedBox(
                       width: 50,
                       height: 50,
-                      child: CircularProgressIndicator(
-                        color: FlutterFlowTheme.of(context).primaryColor,
+                      child: SpinKitChasingDots(
+                        color: Color(0xFF104388),
+                        size: 50,
                       ),
                     ),
                   );
@@ -336,6 +338,8 @@ class _AddChatUsersWidgetState extends State<AddChatUsersWidget> {
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).title3Family),
                       ),
                   borderSide: BorderSide(
                     color: Colors.transparent,

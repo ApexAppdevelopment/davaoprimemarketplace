@@ -4,6 +4,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'login_bottom_sheet_model.dart';
@@ -79,8 +80,11 @@ class _LoginBottomSheetWidgetState extends State<LoginBottomSheetWidget> {
                       child: Text(
                         'Start with',
                         style: FlutterFlowTheme.of(context).subtitle2.override(
-                              fontFamily: 'Roboto Mono',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).subtitle2Family,
                               color: FlutterFlowTheme.of(context).primaryText,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).subtitle2Family),
                             ),
                       ),
                     ),
@@ -111,9 +115,13 @@ class _LoginBottomSheetWidgetState extends State<LoginBottomSheetWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyText1
                               .override(
-                                fontFamily: 'Roboto Mono',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyText1Family,
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyText1Family),
                               ),
                         ),
                       ),

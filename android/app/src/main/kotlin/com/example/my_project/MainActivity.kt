@@ -1,4 +1,4 @@
-package com.affordealsuae.android
+package com.f2marketph.android
 
 import io.flutter.embedding.android.FlutterActivity
 

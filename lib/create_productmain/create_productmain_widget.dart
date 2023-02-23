@@ -7,8 +7,10 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/upload_media.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'create_productmain_model.dart';
@@ -65,9 +67,11 @@ class _CreateProductmainWidgetState extends State<CreateProductmainWidget> {
             child: Text(
               '1/2',
               style: FlutterFlowTheme.of(context).bodyText1.override(
-                    fontFamily: 'Roboto Mono',
+                    fontFamily: FlutterFlowTheme.of(context).bodyText1Family,
                     color: FlutterFlowTheme.of(context).primaryColor,
                     fontWeight: FontWeight.bold,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).bodyText1Family),
                   ),
             ),
           ),
@@ -84,85 +88,116 @@ class _CreateProductmainWidgetState extends State<CreateProductmainWidget> {
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    height: 134.6,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).gray200,
-                      image: DecorationImage(
-                        fit: BoxFit.contain,
-                        image: Image.asset(
-                          'assets/images/upload-icon-6.png',
-                        ).image,
-                      ),
-                      borderRadius: BorderRadius.circular(8),
+                  StreamBuilder<List<ProductsRecord>>(
+                    stream: queryProductsRecord(
+                      queryBuilder: (productsRecord) => productsRecord
+                          .where('photo', isEqualTo: _model.uploadedFileUrl),
+                      singleRecord: true,
                     ),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                      child: InkWell(
-                        onTap: () async {
-                          logFirebaseEvent(
-                              'CREATE_PRODUCTMAIN_Image_966nawev_ON_TAP');
-                          logFirebaseEvent('Image_upload_media_to_firebase');
-                          final selectedMedia =
-                              await selectMediaWithSourceBottomSheet(
-                            context: context,
-                            allowPhoto: true,
-                            allowVideo: true,
-                          );
-                          if (selectedMedia != null &&
-                              selectedMedia.every((m) =>
-                                  validateFileFormat(m.storagePath, context))) {
-                            setState(() => _model.isMediaUploading = true);
-                            var selectedUploadedFiles = <FFUploadedFile>[];
-                            var downloadUrls = <String>[];
-                            try {
-                              selectedUploadedFiles = selectedMedia
-                                  .map((m) => FFUploadedFile(
-                                        name: m.storagePath.split('/').last,
-                                        bytes: m.bytes,
-                                        height: m.dimensions?.height,
-                                        width: m.dimensions?.width,
-                                      ))
-                                  .toList();
-
-                              downloadUrls = (await Future.wait(
-                                selectedMedia.map(
-                                  (m) async =>
-                                      await uploadData(m.storagePath, m.bytes),
-                                ),
-                              ))
-                                  .where((u) => u != null)
-                                  .map((u) => u!)
-                                  .toList();
-                            } finally {
-                              _model.isMediaUploading = false;
-                            }
-                            if (selectedUploadedFiles.length ==
-                                    selectedMedia.length &&
-                                downloadUrls.length == selectedMedia.length) {
-                              setState(() {
-                                _model.uploadedLocalFile =
-                                    selectedUploadedFiles.first;
-                                _model.uploadedFileUrl = downloadUrls.first;
-                              });
-                            } else {
-                              setState(() {});
-                              return;
-                            }
-                          }
-                        },
-                        child: ClipRRect(
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50,
+                            height: 50,
+                            child: SpinKitChasingDots(
+                              color: Color(0xFF104388),
+                              size: 50,
+                            ),
+                          ),
+                        );
+                      }
+                      List<ProductsRecord> dogPhotoProductsRecordList =
+                          snapshot.data!;
+                      // Return an empty Container when the item does not exist.
+                      if (snapshot.data!.isEmpty) {
+                        return Container();
+                      }
+                      final dogPhotoProductsRecord =
+                          dogPhotoProductsRecordList.isNotEmpty
+                              ? dogPhotoProductsRecordList.first
+                              : null;
+                      return Container(
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        height: 134.6,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).gray200,
                           borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            'assets/images/upload-icon-6.png',
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            height: 155.5,
-                            fit: BoxFit.contain,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          child: InkWell(
+                            onTap: () async {
+                              logFirebaseEvent(
+                                  'CREATE_PRODUCTMAIN_Image_966nawev_ON_TAP');
+                              logFirebaseEvent(
+                                  'Image_upload_media_to_firebase');
+                              final selectedMedia =
+                                  await selectMediaWithSourceBottomSheet(
+                                context: context,
+                                allowPhoto: true,
+                                allowVideo: true,
+                              );
+                              if (selectedMedia != null &&
+                                  selectedMedia.every((m) => validateFileFormat(
+                                      m.storagePath, context))) {
+                                setState(() => _model.isMediaUploading = true);
+                                var selectedUploadedFiles = <FFUploadedFile>[];
+                                var downloadUrls = <String>[];
+                                try {
+                                  selectedUploadedFiles = selectedMedia
+                                      .map((m) => FFUploadedFile(
+                                            name: m.storagePath.split('/').last,
+                                            bytes: m.bytes,
+                                            height: m.dimensions?.height,
+                                            width: m.dimensions?.width,
+                                          ))
+                                      .toList();
+
+                                  downloadUrls = (await Future.wait(
+                                    selectedMedia.map(
+                                      (m) async => await uploadData(
+                                          m.storagePath, m.bytes),
+                                    ),
+                                  ))
+                                      .where((u) => u != null)
+                                      .map((u) => u!)
+                                      .toList();
+                                } finally {
+                                  _model.isMediaUploading = false;
+                                }
+                                if (selectedUploadedFiles.length ==
+                                        selectedMedia.length &&
+                                    downloadUrls.length ==
+                                        selectedMedia.length) {
+                                  setState(() {
+                                    _model.uploadedLocalFile =
+                                        selectedUploadedFiles.first;
+                                    _model.uploadedFileUrl = downloadUrls.first;
+                                  });
+                                } else {
+                                  setState(() {});
+                                  return;
+                                }
+                              }
+                            },
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: CachedNetworkImage(
+                                imageUrl: valueOrDefault<String>(
+                                  dogPhotoProductsRecord!.photo,
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/davao-prime-marketplace-3zg2e5/assets/pijuvnopgy6x/upload-icon-6.png',
+                                ),
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                height: 155.5,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
+                      );
+                    },
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(24, 16, 24, 0),
@@ -312,9 +347,9 @@ class _CreateProductmainWidgetState extends State<CreateProductmainWidget> {
                                       child: SizedBox(
                                         width: 50,
                                         height: 50,
-                                        child: CircularProgressIndicator(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryColor,
+                                        child: SpinKitChasingDots(
+                                          color: Color(0xFF104388),
+                                          size: 50,
                                         ),
                                       ),
                                     );
@@ -331,14 +366,20 @@ class _CreateProductmainWidgetState extends State<CreateProductmainWidget> {
                                         .toList(),
                                     onChanged: (val) => setState(
                                         () => _model.dropDownValue = val),
-                                    width: 300,
+                                    width: double.infinity,
                                     height: 50,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Roboto Mono',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyText1Family,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1Family),
                                         ),
                                     hintText: 'Select Category...',
                                     elevation: 2,
@@ -447,9 +488,14 @@ class _CreateProductmainWidgetState extends State<CreateProductmainWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .subtitle2
                                     .override(
-                                      fontFamily: 'Roboto Mono',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .subtitle2Family,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryDark,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .subtitle2Family),
                                     ),
                                 elevation: 0,
                                 borderSide: BorderSide(
@@ -503,8 +549,13 @@ class _CreateProductmainWidgetState extends State<CreateProductmainWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .subtitle2
                                     .override(
-                                      fontFamily: 'Roboto Mono',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .subtitle2Family,
                                       color: Colors.white,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .subtitle2Family),
                                     ),
                                 elevation: 2,
                                 borderSide: BorderSide(
