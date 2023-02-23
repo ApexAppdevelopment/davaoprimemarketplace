@@ -8,7 +8,7 @@
 PRODUCT_NAME = DavaoPrime
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.f2marketph.android
+PRODUCT_BUNDLE_IDENTIFIER = com.farmtomarketph.android
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2022 DavaoPrime. All rights reserved.

@@ -85,6 +85,42 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85997095672:android:b5ab8688a5ec57b13ac90d",
+        "android_client_info": {
+          "package_name": "com.farmtomarketph.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85997095672-pesc7c5pfvalkdfi637ci2v77cvqilvm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmWHqn3fWlmgJvH7FIByprYl8utsoG038"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85997095672-pesc7c5pfvalkdfi637ci2v77cvqilvm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "85997095672-637oth2e6auqb07eubnfgj7jm3i51nb5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.f2marketph.android"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"
