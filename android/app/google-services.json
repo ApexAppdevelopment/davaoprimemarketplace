@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "85997095672",
+    "firebase_url": "https://affordeals-uae-default-rtdb.firebaseio.com",
+    "project_id": "affordeals-uae",
+    "storage_bucket": "affordeals-uae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85997095672:android:921eebc14ea7cae33ac90d",
+        "android_client_info": {
+          "package_name": "com.affordealsuae.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85997095672-b8ah6l56b3ft86b66mkmmjv60lfbh90u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.affordealsuae.android",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "85997095672-pesc7c5pfvalkdfi637ci2v77cvqilvm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmWHqn3fWlmgJvH7FIByprYl8utsoG038"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85997095672-pesc7c5pfvalkdfi637ci2v77cvqilvm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "85997095672-rgbnj66d084ubiotml1duusfd5rj8po4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.affordealsuae.android"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

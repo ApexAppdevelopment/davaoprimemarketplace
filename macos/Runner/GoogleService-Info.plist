@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>85997095672-rgbnj66d084ubiotml1duusfd5rj8po4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.85997095672-rgbnj66d084ubiotml1duusfd5rj8po4</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>85997095672-b8ah6l56b3ft86b66mkmmjv60lfbh90u.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCL0eJ6_dSWosBUT85x-f71BP1slplN_A4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>85997095672</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.affordealsuae.android</string>
+	<key>PROJECT_ID</key>
+	<string>affordeals-uae</string>
+	<key>STORAGE_BUCKET</key>
+	<string>affordeals-uae.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:85997095672:ios:bf305ad3dc43697d3ac90d</string>
+	<key>DATABASE_URL</key>
+	<string>https://affordeals-uae-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
